@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:application/startPage.dart';
-// import 'package:application/homePage.dart';
-// import 'package:application/examp.dart';
-// import 'package:application/notifications.dart';
 import 'package:application/mainPage.dart';
 
 void main() {
