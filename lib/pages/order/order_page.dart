@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:application/mainPage.dart';
+import 'package:application/pages/main/main_page.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
@@ -67,50 +67,50 @@ class _ScreenOrderState extends State<ScreenOrder> {
 
   double calculateTotal() {
     double totalPrice = 0;
-
     for (var item in widget.orderList) {
       totalPrice += (item['cardPrice'] * item['quantity']);
     }
-
     return totalPrice;
+  }
+
+  Future<void> _showEditAddressDialog() {
+    String tempAddress = _deliveryAdress;
+
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Укажите ваш адрес'),
+        content: TextField(
+          decoration: const InputDecoration(
+            hintText: 'Введите адрес доставки',
+            border: OutlineInputBorder(),
+          ),
+          onChanged: (value) => tempAddress = value,
+        ),
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text('Отмена'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() => _deliveryAdress = tempAddress);
+              Navigator.pop(context);
+            },
+            child: const Text('Сохранить'),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget editAdress(OrderType orderTypeView) {
     if (orderTypeView == OrderType.delevery) {
       return ElevatedButton.icon(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Укажите ваш адрес'),
-                content: TextField(
-                  onChanged: (String value) {
-                    _deliveryAdress = value;
-                  },
-                ),
-                actions: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('Отмена'),
-                  ),
+        onPressed: _showEditAddressDialog,
 
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _deliveryAdress;
-                      });
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('Сохранить'),
-                  ),
-                ],
-              );
-            },
-          );
-        },
         label: Text('Изменить адрес'),
         icon: Icon(Icons.edit_square),
 
@@ -146,10 +146,7 @@ class _ScreenOrderState extends State<ScreenOrder> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Цена', style: TextStyle(fontSize: 14)),
-
-              Text(
-                '\$ ${calculateTotal().toStringAsFixed(2)}',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              Text('\$ ${calculateTotal().toStringAsFixed(2)}',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -158,9 +155,7 @@ class _ScreenOrderState extends State<ScreenOrder> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Доставка', style: TextStyle(fontSize: 14)),
-              Text(
-                '\$ 1.0',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              Text('\$ 1.0', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -194,7 +189,6 @@ class _ScreenOrderState extends State<ScreenOrder> {
           SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {},
-
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
@@ -344,8 +338,6 @@ class _ScreenOrderState extends State<ScreenOrder> {
                   thickness: 1,
                 ),
               ),
-
-
 
               Column(
                 children: orderList.map((item) {

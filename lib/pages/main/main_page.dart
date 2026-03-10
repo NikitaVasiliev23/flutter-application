@@ -1,7 +1,7 @@
-import 'package:application/homePage.dart';
-import 'package:application/notifications.dart';
-import 'package:application/orderPage.dart';
-import 'package:application/favoritePage.dart';
+import 'package:application/pages/home/home_page.dart';
+import 'package:application/pages/notification/notifications.dart';
+import 'package:application/pages/order/order_page.dart';
+import 'package:application/pages/favorite/favorite_page.dart';
 
 import 'package:flutter/material.dart';
 

@@ -31,16 +31,17 @@ class NotificationsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Уведомления'), centerTitle: true),
-      body: ListView(
+      body: ListView.builder(
         padding: EdgeInsets.all(16),
-        children: notificationsList.map((item) {
+        itemCount: notificationsList.length,
+        itemBuilder: (context, index) {
+          final item = notificationsList[index];
           return Card(
             margin: EdgeInsets.only(bottom: 12),
             child: Container(
               padding: EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-
                 children: [
                   Text(
                     item['title'],
@@ -60,7 +61,7 @@ class NotificationsPage extends StatelessWidget {
               ),
             ),
           );
-        }).toList(),
+        },
       ),
     );
   }

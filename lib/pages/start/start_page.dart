@@ -8,7 +8,6 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.black,
       body: Stack(
         children: [
           Container(color: Colors.black),
@@ -39,19 +38,19 @@ class StartPage extends StatelessWidget {
                   Text(
                     'Добро пожаловать в наш уютный кофейный уголок, где каждая чашка - это наслаждение для вас.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Color.fromRGBO(162, 162, 162, 100), fontSize: 14),
+                    style: TextStyle(
+                      color: Color.fromRGBO(162, 162, 162, 100),
+                      fontSize: 14,
+                    ),
                   ),
                   SizedBox(height: 30),
-                  SizedBox(
-                    height: 50,
+                  Container(
+                    constraints: BoxConstraints(minHeight: 50),
+
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          '/home',
-                          (route) => false,
-                        );
+                        Navigator.pushReplacementNamed(context, '/home');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepOrange,
