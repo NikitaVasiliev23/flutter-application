@@ -1,8 +1,7 @@
+import 'package:application/pages/favorite/favorite_page.dart';
 import 'package:application/pages/home/home_page.dart';
 import 'package:application/pages/notification/notifications.dart';
 import 'package:application/pages/order/order_page.dart';
-import 'package:application/pages/favorite/favorite_page.dart';
-
 import 'package:flutter/material.dart';
 
 final List<Map<String, dynamic>> orderList = [];

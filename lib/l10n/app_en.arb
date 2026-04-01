@@ -1,0 +1,98 @@
+{
+  "@@locale": "en",
+
+  "startPageTitle": "Fall in Love with Coffee in Blissful Delight!",
+  "startPageDescription": "Welcome to our cozy coffee corner, where every cup is a delightful for you",
+  "startPageButton": "Get Started",
+
+  "notificationsPageTitle":"Notifications",
+  "notificationTitle1":"New coffee from Ethiopia",
+  "notificationDescription1":"Try a new coffee with notes of blueberry and chocolate",
+  "notificationTitle2":"20% discount on all coffee",
+  "notificationDescription2":"Only on weekends - 20% discount on all drinks",
+  "notificationTitle3":"Coffee making masterclass",
+  "notificationDescription3":"Learn how to make the perfect cappuccino",
+  "notificationTitle4":"New coffee machine",
+  "notificationDescription4":"Now we brew coffee on professional La Marzocco",
+
+
+  "favoritePageTitle": "Favorite coffee",
+  "favoriteEmpty": "No favorite coffee :(",
+
+  "productCardName1":"Flat White",
+  "productCardType1":"Espresso",
+  "productCardDescription1":"Rich espresso with a delicate milk foam. The perfect balance of strength and softness for a refreshing start to the day.",
+  "productCardName2":"Mocha Coffee",
+  "productCardType2":"Velvety foam",
+  "productCardDescription2":"Freshly roasted Arabica with notes of chocolate and caramel. A dense crema and a silky taste without bitterness.",
+  "productCardName3":"Americano",
+  "productCardType3":"Whipped cream",
+  "productCardDescription3":"A warming drink with a velvety texture and a slight sweetness. A small pleasure for great achievements.",
+  "productCardName4":"Latte",
+  "productCardType4":"Espresso",
+  "productCardDescription4":"100% Arabica from the highlands of Colombia. A smooth taste with citrus notes and a long chocolate aftertaste. Custom roasted.",
+  "productCardName5":"Chocolate Cheesecake",
+  "productCardType5":"Creamy Indulgence",
+  "productCardDescription5":"A creamy cheesecake on a shortbread base with Belgian chocolate. Melts in your mouth, leaving a rich dark cocoa aftertaste.",
+  "productCardName6":"Chocolate Muffin",
+  "productCardType6":"Belgian Chocolate",
+  "productCardDescription6":"A moist chocolate muffin with dark chocolate chips. Topped with a fluffy whipped cream. The perfect companion for your morning coffee.",
+  "productCardName7":" Chocolate Croissant",
+  "productCardType7":"Morning Joy",
+  "productCardDescription7":"A flaky, buttery croissant filled with melted dark chocolate. When warmed, the chocolate turns into a rich fondant. Perfect with a cappuccino.",
+  "productCardName8":"Mojito",
+  "productCardName9":" Strawberry lemonade",
+  "productCardName10":" Mango lemonade",
+  "productCardName11":" Chicken Sandwich",
+
+  "categoryName1":"Coffee",
+  "categoryName2":"Dessert",
+  "categoryName3":"Limonad",
+  "categoryName4":"Sandwich",
+
+
+  "promoBannerTag":"Promo",
+  "promoBannerText": "Buy one and get one for free",
+
+  "productDetailTitle":"Details ",
+
+  "productDetailButton":"Add to cart",
+  "productDetailTextDescription":"Description",
+  "productDetailTextSize":"Size",
+
+  "searchBarText":"Find coffee",
+  "dropdownText": "City",
+  "dropdownCity1":"Moscow",
+  "dropdownCity2":"Saint Petersburg",
+  "dropdownCity3":"Kazan",
+  "dropdownCity4":"Novosibirsk",
+  "dropdownCity5":"Yekaterinburg",
+  "dropdownCity6":"Omsk",
+
+  "cityList": "Moscow|Saint Petersburg|Kazan|Novosibirsk|Yekaterinburg|Omsk",
+
+  "orderPageTitle":"Cart",
+
+  "orderEmptyText":"The cart is empty",
+  "orderEmptySubtext":"Add your favorite product from the menu",
+  "defaultAdress":"Moscow, 15 Tverskaya Street, Apt. 42",
+  "editAdress":"Edit the address",
+  "alertText":"Provide your address",
+  "alertHintText":"Enter the delivery address",
+  "pickup":"Pickup",
+  "delevery":"Delevery",
+  "paymentDetails":"Payment details",
+
+  "adress":"Address",
+  "total":"Total",
+  "price":"Price",
+  "buttonCancel":"Cancel",
+  "buttonSave":"Save",
+  "buttonPuy":"Puy",
+
+  "removedFromFavorites": "Removed from favorites",
+  "addedToFavorites": "Added to favorites",
+  "removedFromCart": "The product is already in the cart",
+  "addedToCart": "Added to cart"
+
+}

@@ -1,3 +1,4 @@
+import 'package:application/l10n/app_localizations.dart';
 import 'package:application/pages/main/main_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,24 +13,24 @@ class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Любимый кофе'), centerTitle: true),
-      body: favoriteList.isEmpty ? NoFavorite() : ShowFavorite(),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.favoritePageTitle ), centerTitle: true),
+      body: favoriteList.isEmpty ? const _NoFavorite() : const _ShowFavorite(),
     );
   }
 }
 
-class NoFavorite extends StatelessWidget {
-  const NoFavorite({super.key});
+class _NoFavorite extends StatelessWidget {
+  const _NoFavorite();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return  Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Нет любимого кофе :(',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            AppLocalizations.of(context)!.favoriteEmpty,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ],
       ),
@@ -37,17 +38,17 @@ class NoFavorite extends StatelessWidget {
   }
 }
 
-class ShowFavorite extends StatelessWidget {
-  const ShowFavorite({super.key});
+class _ShowFavorite extends StatelessWidget {
+  const _ShowFavorite();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding:  const EdgeInsets.all(16),
       child: Column(
         children: favoriteList.map((item) {
           return Padding(
-            padding: EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.only(bottom: 16),
             child: Row(
               children: [
                 Container(
@@ -61,7 +62,7 @@ class ShowFavorite extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   flex: 2,
                   child: Column(
@@ -69,15 +70,15 @@ class ShowFavorite extends StatelessWidget {
                     children: [
                       Text(
                         item['name'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         item['coffeType'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           color: Color.fromRGBO(162, 162, 162, 1),
                         ),

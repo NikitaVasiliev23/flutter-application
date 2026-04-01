@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:application/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class StartPage extends StatelessWidget {
@@ -21,31 +20,31 @@ class StartPage extends StatelessWidget {
 
           Positioned.fill(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(24, 55, 25, 55),
+              padding: const EdgeInsets.fromLTRB(24, 55, 25, 55),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Влюбитесь в кофе в блаженном восторге!',
+                    AppLocalizations.of(context)!.startPageTitle,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 32,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Text(
-                    'Добро пожаловать в наш уютный кофейный уголок, где каждая чашка - это наслаждение для вас.',
+                    AppLocalizations.of(context)!.startPageDescription,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const  TextStyle(
                       color: Color.fromRGBO(162, 162, 162, 100),
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Container(
-                    constraints: BoxConstraints(minHeight: 50),
+                    constraints: const BoxConstraints(minHeight: 50),
 
                     width: double.infinity,
                     child: ElevatedButton(
@@ -55,9 +54,9 @@ class StartPage extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepOrange,
                       ),
-                      child: Text(
-                        'Начать',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      child:  Text(
+                        AppLocalizations.of(context)!.startPageButton,
+                        style: const TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ),
                   ),

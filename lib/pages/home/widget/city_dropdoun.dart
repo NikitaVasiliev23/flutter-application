@@ -1,3 +1,4 @@
+import 'package:application/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class CityDropdounWidget extends StatelessWidget {
@@ -7,48 +8,47 @@ class CityDropdounWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Город',
-          style: TextStyle(
+          AppLocalizations.of(context)!.dropdownText,
+          style: const TextStyle(
             color: Color.fromRGBO(162, 162, 162, 1),
             fontSize: 12,
           ),
         ),
-        CityDropdoun(),
+        const _CityDropdoun(),
       ],
     );
   }
 }
 
-
-
-
-class CityDropdoun extends StatefulWidget {
-  const CityDropdoun({super.key});
+class _CityDropdoun extends StatefulWidget {
+  const _CityDropdoun();
 
   @override
-  State<CityDropdoun> createState() => _CityDropdounState();
+  State<_CityDropdoun> createState() => _CityDropdounState();
 }
 
-class _CityDropdounState extends State<CityDropdoun> {
-  final List<String> _city = [
-    'Москва',
-    'Санкт-Петербург',
-    'Казань',
-    'Новосибирск',
-    'Екатеринбург',
-    'Нижний Новгород',
-    'Сочи',
-  ];
+class _CityDropdounState extends State<_CityDropdoun> {
+  String dropdownValues = '';
 
-  String dropdownValues = 'Москва';
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    dropdownValues = AppLocalizations.of(context)!.dropdownCity1;
+  }
+  
 
   @override
   Widget build(BuildContext context) {
+    
+    final localizations = AppLocalizations.of(context)!;
+
+    final List<String> city = localizations.cityList.split('|');
+
     return DropdownButton(
       value: dropdownValues,
       underline: Container(),
@@ -57,12 +57,12 @@ class _CityDropdounState extends State<CityDropdoun> {
         fontSize: 14,
         fontWeight: FontWeight.bold,
       ),
-      dropdownColor: Color.fromRGBO(17, 17, 17, 1),
+      dropdownColor: const Color.fromRGBO(17, 17, 17, 1),
       icon: const Icon(Icons.arrow_drop_down_rounded, color: Colors.white),
-      items: _city.map<DropdownMenuItem<String>>((String value) {
+      items: city.map<DropdownMenuItem<String>>((value) {
         return DropdownMenuItem<String>(value: value, child: Text(value));
       }).toList(),
-      onChanged: (String? value) {
+      onChanged: (value) {
         setState(() {
           dropdownValues = value!;
         });
